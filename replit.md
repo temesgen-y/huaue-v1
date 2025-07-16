@@ -103,6 +103,26 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+- **Vercel Deployment Structure Implementation (July 16, 2025)**: Restructured project for Vercel serverless deployment
+  - **Serverless API**: Created `/api/` directory at root with Vercel-compatible serverless functions
+  - **Endpoint Files**: contact.ts, products.ts, news.ts, and admin/* (login.ts, messages.ts, request-reset.ts, reset-password.ts, verify.ts)
+  - **Static Build**: `/dist/` directory with index.html, assets/, and favicon.ico for SPA deployment
+  - **Vercel Config**: Configured vercel.json for proper API routing and static file serving
+  - **VercelRequest/Response**: Updated all API endpoints to use @vercel/node types
+  - **Maintained Functionality**: All existing endpoints work identically with serverless architecture
+  - **Production Ready**: Industry-standard Vercel deployment structure
+  - **Documentation**: Updated README.md with Vercel deployment instructions and new folder structure
+
+- **Database Seeding System Implementation (July 16, 2025)**: Created comprehensive automatic database initialization and seeding
+  - **Auto-Seeding**: `server/seed.ts` automatically creates tables and inserts sample data on startup
+  - **Production Data**: Admin user (admin@huayueplasticsindustry.com / Admin4321!), 6 HUAYUE products, 6 EIDER products
+  - **Sample Content**: 5 news articles, 5 contact messages with Ethiopian context for realistic testing
+  - **Safe Operation**: Only creates missing data, never overwrites existing records
+  - **Error Handling**: Comprehensive logging and graceful failure handling
+  - **Database Connection**: Updated to new Neon PostgreSQL connection string
+  - **Startup Integration**: Seeding runs automatically before server starts, ensures consistent environment
+  - **Documentation**: Complete database setup guide created (database-setup.md)
+
 - **Contact Form Phone Field Integration (July 16, 2025)**: Successfully added phone number capture throughout the entire contact system
   - **Database Schema**: Added phone field to messages table with proper validation
   - **Frontend Form**: Added tel input field with Ethiopian phone format placeholder (+251977000000)

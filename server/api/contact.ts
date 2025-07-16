@@ -1,15 +1,14 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
-import { insertMessageSchema } from "../shared/schema";
-import { storage } from "../server/storage";
-import { telegramService } from "../server/telegramService";
-import { sendSecureOtpEmail } from "../server/emailService";
-import { sendGridService } from "../server/sendgridService";
+import { Router } from "express";
+import { insertMessageSchema } from "../../shared/schema";
+import { storage } from "../storage";
+import { telegramService } from "../telegramService";
+import { sendSecureOtpEmail } from "../emailService";
+import { sendGridService } from "../sendgridService";
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
-  }
+const router = Router();
 
+// Contact form submission
+router.post("/", async (req, res) => {
   try {
     console.log("Contact form submission received:", req.body);
     
@@ -70,4 +69,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       message: "Something went wrong. Please try again later." 
     });
   }
-}
+});
+
+export default router;
