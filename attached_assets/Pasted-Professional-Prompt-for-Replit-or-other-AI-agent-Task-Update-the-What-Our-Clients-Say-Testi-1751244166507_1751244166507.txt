@@ -1,0 +1,70 @@
+Professional Prompt for Replit (or other AI agent)
+🧾 Task:
+Update the "What Our Clients Say" (Testimonials) section by replacing the current testimonial names and job titles with Ethiopian placeholder names while keeping the layout and design the same.
+
+✨ Placeholder Content (3 Testimonials)
+1.
+Name: Amanuel Getachew
+Title: Senior Engineer, EthioInfra Solutions
+Testimonial:
+"HUAYUE pipes exceeded our expectations in both durability and delivery time. A reliable partner for industrial infrastructure projects."
+
+2.
+Name: Dr. Meseret Taye
+Title: Director of Operations, Medpharm Manufacturing
+Testimonial:
+"The EIDER fittings were critical for maintaining clean standards in our pharmaceutical pipeline. Precision and reliability at its best."
+
+3.
+Name: Muluwork Desta
+Title: Procurement Lead, Addis Construction Group
+Testimonial:
+"Excellent quality and on-time delivery. We’ve used HUAYUE products in several projects across the region—always with great results."
+
+✅ Sample HTML (for testimonial cards)
+jsx
+Copy
+Edit
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {/* Testimonial 1 */}
+  <div className="bg-white p-6 shadow rounded">
+    <p className="text-gray-600 italic mb-4">
+      "HUAYUE pipes exceeded our expectations in both durability and delivery time. A reliable partner for industrial infrastructure projects."
+    </p>
+    <div className="flex items-center">
+      <img src="/assets/images/testimonial-1.jpg" className="w-12 h-12 rounded-full mr-4" alt="Amanuel Getachew" />
+      <div>
+        <p className="font-bold">Amanuel Getachew</p>
+        <p className="text-sm text-gray-500">Senior Engineer, EthioInfra Solutions</p>
+      </div>
+    </div>
+  </div>
+
+  {/* Testimonial 2 */}
+  <div className="bg-white p-6 shadow rounded">
+    <p className="text-gray-600 italic mb-4">
+      "The EIDER fittings were critical for maintaining clean standards in our pharmaceutical pipeline. Precision and reliability at its best."
+    </p>
+    <div className="flex items-center">
+      <img src="/assets/images/testimonial-2.jpg" className="w-12 h-12 rounded-full mr-4" alt="Dr. Meseret Taye" />
+      <div>
+        <p className="font-bold">Dr. Meseret Taye</p>
+        <p className="text-sm text-gray-500">Director of Operations, Medpharm Manufacturing</p>
+      </div>
+    </div>
+  </div>
+
+  {/* Testimonial 3 */}
+  <div className="bg-white p-6 shadow rounded">
+    <p className="text-gray-600 italic mb-4">
+      "Excellent quality and on-time delivery. We’ve used HUAYUE products in several projects across the region—always with great results."
+    </p>
+    <div className="flex items-center">
+      <img src="/assets/images/testimonial-3.jpg" className="w-12 h-12 rounded-full mr-4" alt="Muluwork Desta" />
+      <div>
+        <p className="font-bold">Muluwork Desta</p>
+        <p className="text-sm text-gray-500">Procurement Lead, Addis Construction Group</p>
+      </div>
+    </div>
+  </div>
+</div>

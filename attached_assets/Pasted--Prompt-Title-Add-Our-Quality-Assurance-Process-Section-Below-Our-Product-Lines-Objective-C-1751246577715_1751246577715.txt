@@ -1,0 +1,84 @@
+ Prompt Title: Add "Our Quality Assurance Process" Section Below "Our Product Lines"
+📌 Objective:
+Create a new section titled "Our Quality Assurance Process" and position it directly below the “Our Product Lines” section on the homepage.
+
+🧩 Instructions:
+Replicate the design shown in the reference image:
+
+Layout:
+
+Left side: vertical steps with numbered circular badges (01–04)
+
+Right side: relevant image (/assets/images/quality-process.jpg or the uploaded image)
+
+Ensure balanced, responsive two-column layout
+
+Content:
+
+Heading:
+Our Quality Assurance Process
+Subheading:
+Rigorous testing and validation at every step
+
+Bullet Points:
+Raw Material Inspection
+Every batch of raw materials undergoes comprehensive testing before production begins.
+
+In-Process Quality Control
+Continuous monitoring and testing throughout the manufacturing process.
+
+Final Product Testing
+Complete quality verification before products leave our facility.
+
+Documentation & Traceability
+Full documentation trail for complete product traceability.
+
+✅ Tailwind CSS Example (Responsive Layout):
+jsx
+Copy
+Edit
+<section className="bg-white py-16 px-4 md:px-8 lg:px-20">
+  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+    <div className="w-full lg:w-1/2">
+      <h2 className="text-3xl font-bold text-gray-900 mb-2">Our Quality Assurance Process</h2>
+      <p className="text-gray-600 mb-8">Rigorous testing and validation at every step</p>
+      <ul className="space-y-6">
+        {[
+          {
+            title: "Raw Material Inspection",
+            desc: "Every batch of raw materials undergoes comprehensive testing before production begins.",
+          },
+          {
+            title: "In-Process Quality Control",
+            desc: "Continuous monitoring and testing throughout the manufacturing process.",
+          },
+          {
+            title: "Final Product Testing",
+            desc: "Complete quality verification before products leave our facility.",
+          },
+          {
+            title: "Documentation & Traceability",
+            desc: "Full documentation trail for complete product traceability.",
+          },
+        ].map((item, idx) => (
+          <li key={idx} className="flex items-start gap-4">
+            <span className="bg-green-600 text-white font-bold rounded-full w-8 h-8 flex items-center justify-center">
+              {String(idx + 1).padStart(2, "0")}
+            </span>
+            <div>
+              <h4 className="font-semibold text-lg text-gray-800">{item.title}</h4>
+              <p className="text-sm text-gray-600">{item.desc}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div className="w-full lg:w-1/2">
+      <img
+        src="/assets/images/quality-process.jpg"
+        alt="Quality Assurance Process"
+        className="rounded-xl shadow-lg w-full object-cover"
+      />
+    </div>
+  </div>
+</section>

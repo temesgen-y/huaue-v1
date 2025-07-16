@@ -1,0 +1,104 @@
+Add PostgreSQL Backend & Admin Features
+Extend the existing HUAYUE PLASTICS INDUSTRY website with a Node.js backend and a PostgreSQL database named huayue. Implement a secure admin dashboard with login functionality and contact form message management. Ensure full integration between frontend and backend.
+
+🗄️ Database Requirements
+Use PostgreSQL
+
+Database name: huayue
+
+📌 Tables to Create:
+admins
+
+id (Primary Key)
+
+email (unique)
+
+password_hash
+
+otp_code (nullable, for password reset)
+
+otp_expiry (timestamp, nullable)
+
+messages
+
+id (Primary Key)
+
+name
+
+email
+
+subject
+
+message
+
+submitted_at (timestamp)
+
+🔐 Admin Authentication Features
+Admin Login Page
+
+Allow admin to log in using email and password
+
+Passwords stored securely using bcrypt
+
+Forgot Password Flow
+
+Accept email
+
+Send 6-digit OTP code via email (use Nodemailer or a similar tool)
+
+Allow admin to enter OTP and set new password
+
+📬 Contact Form Integration
+On the frontend "Contact Us" page:
+
+Collect: Name, Email, Subject, Message
+
+Submit form data to backend API
+
+Store the data in the messages table
+
+In the Admin Dashboard:
+
+Display all messages with timestamps
+
+Include basic table filters or search
+
+🖼️ Frontend Updates
+Add 5 image slides to the homepage banner (ensure slider arrows are visible on all devices).
+
+Ensure the "Contact Us" button on the homepage is always visible (not only on hover).
+
+Under the Products > HUAYUE and Products > EIDER dropdown pages:
+
+Include brand-specific logo headers (provided)
+
+Add brand description
+
+Display products in card layout with images and descriptions (already discussed)
+
+🌍 Map Fix
+In the Contact Us page:
+
+Replace non-functional embed with a working Google Maps iframe
+
+Use Kombolcha, Ethiopia as the location
+
+Example embed:
+
+html
+Copy
+Edit
+<iframe 
+  src="https://www.google.com/maps?q=Kombolcha,Ethiopia&output=embed"
+  width="100%" 
+  height="300" 
+  allowfullscreen="" 
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+📱 Final Notes
+Make the entire site responsive using Tailwind CSS
+
+Ensure admin dashboard is mobile-friendly
+
+Test login, password reset, message form, and database integration

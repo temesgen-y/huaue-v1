@@ -1,0 +1,71 @@
+Prompt Title: Add Confirmation Message to "Stay Updated" Subscribe Section (News Page)
+📌 Objective:
+Enhance the “Stay Updated” subscription form in the News page so that it displays a message confirming the user's action.
+
+🧩 Instructions:
+When a user submits their email through the form, display the message:
+"Thank you for subscribing to us"
+
+The message should:
+
+Appear below the form
+
+Be styled in a success tone (e.g., green text)
+
+Automatically disappear after 5 seconds
+
+The form should not reload the page
+
+Ensure full mobile responsiveness
+
+Use either React (with state) or plain JavaScript (DOM manipulation), depending on the tech stack
+
+✅ React Example (Tailwind CSS):
+jsx
+Copy
+Edit
+import { useState } from "react";
+
+function NewsletterSubscribe() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setSubscribed(true);
+    setEmail("");
+
+    setTimeout(() => setSubscribed(false), 5000); // remove message after 5 seconds
+  };
+
+  return (
+    <div className="bg-white shadow rounded-lg p-6 max-w-xl mx-auto text-center">
+      <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
+      <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 justify-center">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="p-2 border border-gray-300 rounded w-full sm:w-auto"
+        />
+        <button
+          type="submit"
+          className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+        >
+          Subscribe
+        </button>
+      </form>
+      {subscribed && (
+        <p className="mt-4 text-green-600 font-medium transition-opacity duration-500">
+          Thank you for subscribing to us
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default NewsletterSubscribe;

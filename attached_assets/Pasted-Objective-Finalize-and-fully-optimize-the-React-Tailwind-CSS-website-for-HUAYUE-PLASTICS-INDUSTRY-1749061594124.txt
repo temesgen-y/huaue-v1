@@ -1,0 +1,87 @@
+Objective: Finalize and fully optimize the React + Tailwind CSS website for HUAYUE PLASTICS INDUSTRY. Ensure complete mobile responsiveness, fix map integration, and enhance the News page with rich content and clean design.
+
+✅ Project Details
+Company Name: HUAYUE PLASTICS INDUSTRY
+
+Stack: React (functional components) + Tailwind CSS
+
+Type: Static website (no database or backend)
+
+Design Goal: Clean, modern, mobile-first layout with full responsiveness
+
+✅ Required Fixes and Enhancements
+1. Responsive Design (All Pages)
+Ensure every component, layout, and section adapts correctly to:
+
+Small screens (mobile phones)
+
+Medium screens (tablets)
+
+Large screens (desktop/laptops)
+
+Use Tailwind CSS utilities like:
+
+flex-wrap, w-full, min-w-0, overflow-x-auto, text-sm sm:text-base
+
+Grid breakpoints: grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+
+Responsive padding/margin: px-4 sm:px-6 lg:px-12, py-6 sm:py-10
+
+2. Contact Us Page – Google Map Fix
+Properly embed a responsive Google Map centered on:
+
+Copy
+Edit
+Kombolcha, Ethiopia
+Use this working embed snippet:
+
+html
+Copy
+Edit
+<iframe
+  src="https://maps.google.com/maps?q=Kombolcha,+Ethiopia&z=15&output=embed"
+  width="100%"
+  height="300"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+></iframe>
+Place the map above or next to contact information, stacked vertically on mobile.
+
+3. News Page – Design + Content Upgrade
+Fix any rendering or layout issues.
+
+Add at least 4 news articles, each with:
+
+Image
+
+Title
+
+Publication date
+
+Short preview/description
+
+Optional: “Read more” button or link
+
+Layout:
+
+Use a responsive grid:
+
+tailwind
+Copy
+Edit
+grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6
+Card design:
+
+tailwind
+Copy
+Edit
+bg-white shadow-md rounded-lg overflow-hidden p-4 hover:shadow-xl transition hover:scale-105
+Ensure mobile-friendly vertical stacking and spacing.
+
+✅ Notes
+Replace all old company name references with:
+HUAYUE PLASTICS INDUSTRY
+
+Ensure consistency across breakpoints and test using responsive emulator.

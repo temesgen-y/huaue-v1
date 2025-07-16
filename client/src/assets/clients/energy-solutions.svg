@@ -1,0 +1,6 @@
+<svg width="120" height="60" viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="60" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+  <polygon points="20,35 25,25 30,35" fill="#eab308"/>
+  <text x="40" y="28" fill="#374151" font-family="Arial, sans-serif" font-size="11" font-weight="bold">ENERGY</text>
+  <text x="40" y="38" fill="#6b7280" font-family="Arial, sans-serif" font-size="8">SOLUTIONS</text>
+</svg>

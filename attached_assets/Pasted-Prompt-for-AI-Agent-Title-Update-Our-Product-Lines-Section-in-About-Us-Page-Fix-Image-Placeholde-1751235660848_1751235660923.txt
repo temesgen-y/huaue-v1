@@ -1,0 +1,97 @@
+Prompt for AI Agent
+Title: Update “Our Product Lines” Section in About Us Page (Fix Image Placeholder with Final Design)
+
+Objective:
+
+Replace the missing EIDER product image in the "Our Product Lines" section on the About Us page with a proper locally stored image (/assets/images/eider.jpg). Match the design shown in the uploaded reference image — ensuring clean layout, good spacing, and responsive display.
+
+🔧 Requirements:
+Section Title:
+
+Title: Our Product Lines
+
+Subtitle: Discover our comprehensive range of industrial piping solutions designed for various applications and industries.
+
+Cards Design:
+
+Two product cards:
+
+HUAYUE
+
+EIDER
+
+Each card must include:
+
+Image (local)
+
+Title with icon (✅)
+
+Short description
+
+Bullet points for product features
+
+Replace Placeholder Image:
+
+For the EIDER product card, replace the broken or missing image with:
+
+/assets/images/eider.jpg (uploaded image)
+
+Ensure image styling: object-cover w-full h-48 rounded-t-lg
+
+Styling with Tailwind CSS:
+
+Use clean and consistent styling:
+
+bg-white, shadow-md, rounded-lg, p-4, gap-6, mb-10
+
+Card layout: flex flex-col md:flex-row
+
+Image layout: stacked on mobile, side-by-side on desktop
+
+Responsiveness:
+
+Ensure layout adjusts on smaller screens
+
+Cards stack vertically on mobile
+
+💻 Example Component (React + Tailwind):
+jsx
+Copy
+Edit
+<section className="my-12 px-4">
+  <h2 className="text-2xl font-bold text-center mb-4">Our Product Lines</h2>
+  <p className="text-center text-gray-600 mb-8">
+    Discover our comprehensive range of industrial piping solutions designed for various applications and industries.
+  </p>
+  <div className="flex flex-col md:flex-row gap-6 justify-center">
+    {/* HUAYUE Card */}
+    <div className="bg-white shadow-md rounded-lg overflow-hidden md:w-1/2">
+      <img src="/assets/images/huayue.jpg" alt="HUAYUE Pipes" className="object-cover w-full h-48" />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-green-700">✅ HUAYUE</h3>
+        <p className="text-sm text-gray-600 mt-2">
+          Heavy-duty steel pipes and fittings designed for extreme industrial conditions.
+        </p>
+        <ul className="list-disc list-inside text-sm mt-2 text-gray-700">
+          <li>High-pressure applications</li>
+          <li>Corrosion resistant coating</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* EIDER Card */}
+    <div className="bg-white shadow-md rounded-lg overflow-hidden md:w-1/2">
+      <img src="/assets/images/eider.jpg" alt="EIDER precision piping systems" className="object-cover w-full h-48" />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-green-700">✅ EIDER</h3>
+        <p className="text-sm text-gray-600 mt-2">
+          Precision-engineered piping systems for pharmaceutical and clean energy industries.
+        </p>
+        <ul className="list-disc list-inside text-sm mt-2 text-gray-700">
+          <li>Pharmaceutical-grade materials</li>
+          <li>Food-safe coatings</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
